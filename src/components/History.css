@@ -1,0 +1,60 @@
+.history-page {
+  padding: 20px;
+}
+
+.clear-btn {
+  background-color: #ff0000;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.history-grid {
+  display: grid;
+grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.history-card {
+  background: #1e1e1e;
+  padding: 10px;
+  border-radius: 10px;
+}
+body.light .history-card{
+ background-color: #d8d3d3;;
+ color: #1e1e1e;
+
+}
+.history-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.history-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  color: #e5dfdf;
+}
+body.light .history-card h3 {
+  color: #1e1e1e;
+}
+.history-card p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ───────── MOBILE  (≤ 768 px)  ───────── */
+@media (max-width: 768px) {
+  .history-grid {
+    grid-template-columns: 1fr;   /* one card per row */
+    gap: 16px;                    /* slightly tighter gap */
+    padding-right: 20px;
+  }
+
+  .history-card {
+    width: 100%;                  /* card fills its row */
+  }
+}
+

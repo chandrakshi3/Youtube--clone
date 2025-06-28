@@ -1,0 +1,62 @@
+
+
+/* container beside sidebar */
+.shorts-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  height: 100vh;          /* ← take the whole screen height  */
+
+}
+
+/* vertical feed */
+.shorts-feed {
+  width: 360px;
+  height: 85vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;        /* snap per card (mobile) */
+margin: 0 auto; 
+}
+
+/* each short */
+.short-card {
+  scroll-snap-align: start;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.short-card iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* phone vertical look */
+  border: none;
+}
+
+/* scroll buttons (desktop only) */
+.scroll-btn {
+ position: fixed;             /* stay at viewport edge */
+ left: calc(50% + 220px);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #ff0000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.scroll-btn:hover { opacity: 1; }
+.up-btn   { top: 20px; }
+.down-btn { bottom: 20px; }
+
+/* hide buttons on narrow screens (<= 768px) */
+@media (max-width: 768px) {
+  .scroll-btn { display: none; }
+}

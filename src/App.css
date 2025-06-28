@@ -1,0 +1,325 @@
+body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #121212;
+  padding: 1px 24px;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.light .navbar {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+}
+
+
+/* Make the container full width and center contents */
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+/* Flex layout for input and button */
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Input styling */
+.searchbar{
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #333;
+  color: white;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+
+
+/* search box (input) */
+body.light .searchbar {
+  background: #eeeeee;
+  color: #000;
+}
+
+
+
+.searchbar::placeholder {
+  color: #aaa;
+}
+
+.searchbar:focus {
+  outline: none;
+  background-color: #444;
+}
+
+/* Button styling */
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #cc0000;
+}
+
+
+.logo {
+  color: #ff0000;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+/* Layout */
+.bottom {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.margin-panel {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  background-color: #121212;
+  padding: 24px 20px;
+  border-right: 1px solid #333;
+}
+
+body.light .margin-panel {
+  background: #ffffff;
+  border-right: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.light .margin-panel a       { color: #222; }
+body.light .margin-panel a:hover { background:#e8e8e8; color:#ff0000; }
+
+.margin-panel a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 18px;
+  margin: 14px 0;
+  transition: 0.3s;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.margin-panel a:hover {
+  background-color: #ff0000;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Video Grid */
+.video-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+  padding: 20px 30px;
+  flex: 1;
+  justify-items: center;
+}
+
+/* Video Card */
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 26px rgba(224, 6, 6, 0.705);
+}
+body.light .card:hover{
+   transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 26px rgba(245, 52, 52, 0.705);
+}
+.card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #292929;
+}
+body.light .card {
+  background: #d8d3d3;
+  border-right: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+body.light .card b{color: #0f0f0f;}
+body.light .card p{color: #0f0f0f;}
+.card b {
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 12px;
+  text-align: left;
+  padding-left: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #999;
+  margin: 0 0 16px 0;
+  text-align: left;
+  padding-left: 8px;
+}
+
+/* Default (dark mode) */
+body.dark {
+  background-color: #181818;
+  color: white;
+}
+
+/* Light theme */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  padding: 8px 15px;
+  margin: 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #cc0000;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .video-panel {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 24px;
+  }
+
+  .margin-panel {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom {
+    flex-direction: column;
+  }
+
+  .margin-panel {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid #333;
+    border-right: none;
+    padding: 10px 0;
+  }
+
+  .video-panel {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* stack logo on its own line, then place search + theme in one row */
+  .navbar {
+    flex-wrap: wrap;        /* allow wrapping */
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .logo {                   /* first line */
+    flex-basis: 100%;
+    margin: 0 0 4px 0;
+    font-size: 24px;
+  }
+
+  .search-container {       /* second line, fills width */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0;              /* remove the 40 px top/bottom margin */
+  }
+
+  .search-form {            /* search input grows */
+    flex: 1;
+    display: flex;
+    gap: 8px;
+  }
+
+  .searchbar {              /* override fixed width */
+    flex: 1;
+    width: auto;
+  }
+
+  .theme-toggle-btn {       /* sits to the right of the search box */
+    margin: 0 0 0 px;
+    padding: 8px 17px;
+  }
+}
+/* ①  Remove min‑height from the default rule   */
+.bottom {          /* already has display:flex etc.   */
+  flex-direction: row;
+  /* DELETE the old  min-height:100vh;  here          */
+}
+
+/* ②  Stretch when you already add “has-videos” */
+.bottom.has-videos {
+  min-height: 100vh;     /* full viewport only when cards present */
+}
+
+/* ───────── YOUTUBE IFRAME THUMBNAILS ───────── */
+.card iframe,
+.card iframe.thumb {
+  width: 100%;          /* fill the card width */
+  aspect-ratio: 16 / 9; /* keep the 16:9 video shape */
+  height: auto;
+  display: block;       /* no inline‑element gap */
+  border: none;
+}
